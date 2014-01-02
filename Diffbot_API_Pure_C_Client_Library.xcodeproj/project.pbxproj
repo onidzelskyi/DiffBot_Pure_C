@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FAF5287E1872F3AF007885B2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF5287D1872F3AF007885B2 /* main.c */; };
 		FAF528801872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */; };
+		FAF528881872F4F0007885B2 /* DBCClient.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF528871872F4F0007885B2 /* DBCClient.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		FAF5287A1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Diffbot_API_Pure_C_Client_Library; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF5287D1872F3AF007885B2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Diffbot_API_Pure_C_Client_Library.1; sourceTree = "<group>"; };
+		FAF528861872F3DF007885B2 /* DBCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBCClient.h; sourceTree = "<group>"; };
+		FAF528871872F4F0007885B2 /* DBCClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DBCClient.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				FAF5287D1872F3AF007885B2 /* main.c */,
+				FAF528861872F3DF007885B2 /* DBCClient.h */,
 				FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */,
+				FAF528871872F4F0007885B2 /* DBCClient.c */,
 			);
 			path = Diffbot_API_Pure_C_Client_Library;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF528881872F4F0007885B2 /* DBCClient.c in Sources */,
 				FAF5287E1872F3AF007885B2 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +201,7 @@
 		FAF528841872F3AF007885B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"OTHER_LDFLAGS[arch=*]" = "-lcurl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
