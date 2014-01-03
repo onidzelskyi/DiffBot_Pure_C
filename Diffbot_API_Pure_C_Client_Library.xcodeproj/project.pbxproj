@@ -31,6 +31,7 @@
 		FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Diffbot_API_Pure_C_Client_Library.1; sourceTree = "<group>"; };
 		FAF528861872F3DF007885B2 /* DBCClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBCClient.h; sourceTree = "<group>"; };
 		FAF528871872F4F0007885B2 /* DBCClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DBCClient.c; sourceTree = "<group>"; };
+		FAF5288A1876DDFD007885B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		FAF528711872F3AF007885B2 = {
 			isa = PBXGroup;
 			children = (
+				FAF5288A1876DDFD007885B2 /* README.md */,
 				FAF5287C1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */,
 				FAF5287B1872F3AF007885B2 /* Products */,
 			);
@@ -232,6 +234,7 @@
 				FAF528851872F3AF007885B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
