@@ -1,4 +1,4 @@
-# _Project_
+# _Diffbot API C Client Library_
 
 _Description: What does this project do and who does it serve?_
 
