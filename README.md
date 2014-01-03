@@ -1,6 +1,6 @@
 # _Diffbot API C Client Library_
 
-_Description: What does this project do and who does it serve?_
+_Description: This is a simple client for the Diffbot API in the C language_
 
 ## Project Setup
 
