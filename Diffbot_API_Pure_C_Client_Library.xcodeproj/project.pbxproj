@@ -10,7 +10,20 @@
 		FAF5287E1872F3AF007885B2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF5287D1872F3AF007885B2 /* main.c */; };
 		FAF528801872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */; };
 		FAF528881872F4F0007885B2 /* DBCClient.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF528871872F4F0007885B2 /* DBCClient.c */; };
+		FAF52893187929E7007885B2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF52892187929E7007885B2 /* SenTestingKit.framework */; };
+		FAF52899187929E7007885B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF52897187929E7007885B2 /* InfoPlist.strings */; };
+		FAF5289B187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5289A187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library_Tests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAF5289D187929E7007885B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAF528721872F3AF007885B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAF528791872F3AF007885B2;
+			remoteInfo = Diffbot_API_Pure_C_Client_Library;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FAF528781872F3AF007885B2 /* CopyFiles */ = {
@@ -33,6 +46,12 @@
 		FAF528871872F4F0007885B2 /* DBCClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DBCClient.c; sourceTree = "<group>"; };
 		FAF5288A1876DDFD007885B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FAF5288B1876E073007885B2 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
+		FAF52890187929E6007885B2 /* Diffbot_API_Pure_C_Client_Library Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diffbot_API_Pure_C_Client_Library Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF52892187929E7007885B2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FAF52896187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Diffbot_API_Pure_C_Client_Library Tests-Info.plist"; sourceTree = "<group>"; };
+		FAF52898187929E7007885B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAF5289A187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Diffbot_API_Pure_C_Client_Library_Tests.m; sourceTree = "<group>"; };
+		FAF5289C187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Diffbot_API_Pure_C_Client_Library Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +59,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF5288D187929E6007885B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF52893187929E7007885B2 /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +79,8 @@
 				FAF5288B1876E073007885B2 /* INSTALL */,
 				FAF5288A1876DDFD007885B2 /* README.md */,
 				FAF5287C1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */,
+				FAF52894187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests */,
+				FAF52891187929E6007885B2 /* Frameworks */,
 				FAF5287B1872F3AF007885B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF5287A1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */,
+				FAF52890187929E6007885B2 /* Diffbot_API_Pure_C_Client_Library Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +103,33 @@
 				FAF528871872F4F0007885B2 /* DBCClient.c */,
 			);
 			path = Diffbot_API_Pure_C_Client_Library;
+			sourceTree = "<group>";
+		};
+		FAF52891187929E6007885B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF52892187929E7007885B2 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF52894187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5289A187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library_Tests.m */,
+				FAF52895187929E7007885B2 /* Supporting Files */,
+			);
+			path = "Diffbot_API_Pure_C_Client_Library Tests";
+			sourceTree = "<group>";
+		};
+		FAF52895187929E7007885B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF52896187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests-Info.plist */,
+				FAF52897187929E7007885B2 /* InfoPlist.strings */,
+				FAF5289C187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +152,24 @@
 			productReference = FAF5287A1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */;
 			productType = "com.apple.product-type.tool";
 		};
+		FAF5288F187929E6007885B2 /* Diffbot_API_Pure_C_Client_Library Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF5289F187929E7007885B2 /* Build configuration list for PBXNativeTarget "Diffbot_API_Pure_C_Client_Library Tests" */;
+			buildPhases = (
+				FAF5288C187929E6007885B2 /* Sources */,
+				FAF5288D187929E6007885B2 /* Frameworks */,
+				FAF5288E187929E6007885B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAF5289E187929E7007885B2 /* PBXTargetDependency */,
+			);
+			name = "Diffbot_API_Pure_C_Client_Library Tests";
+			productName = "Diffbot_API_Pure_C_Client_Library Tests";
+			productReference = FAF52890187929E6007885B2 /* Diffbot_API_Pure_C_Client_Library Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -103,6 +178,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Oleksii;
+				TargetAttributes = {
+					FAF5288F187929E6007885B2 = {
+						TestTargetID = FAF528791872F3AF007885B2;
+					};
+				};
 			};
 			buildConfigurationList = FAF528751872F3AF007885B2 /* Build configuration list for PBXProject "Diffbot_API_Pure_C_Client_Library" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -117,9 +197,21 @@
 			projectRoot = "";
 			targets = (
 				FAF528791872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */,
+				FAF5288F187929E6007885B2 /* Diffbot_API_Pure_C_Client_Library Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAF5288E187929E6007885B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF52899187929E7007885B2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAF528761872F3AF007885B2 /* Sources */ = {
@@ -131,7 +223,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAF5288C187929E6007885B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF5289B187929E7007885B2 /* Diffbot_API_Pure_C_Client_Library_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAF5289E187929E7007885B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAF528791872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */;
+			targetProxy = FAF5289D187929E7007885B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAF52897187929E7007885B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF52898187929E7007885B2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FAF528811872F3AF007885B2 /* Debug */ = {
@@ -205,15 +324,62 @@
 		FAF528841872F3AF007885B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"OTHER_LDFLAGS[arch=*]" = "-lcurl";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/local/lib;
+				OTHER_LDFLAGS = (
+					"-lcurl",
+					"-ljson",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-lcurl",
+					"-ljson",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /opt/local/include/json;
 			};
 			name = Debug;
 		};
 		FAF528851872F3AF007885B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-lcurl",
+					"-ljson",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAF528A0187929E7007885B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Diffbot_API_Pure_C_Client_Library Tests/Diffbot_API_Pure_C_Client_Library Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Diffbot_API_Pure_C_Client_Library Tests/Diffbot_API_Pure_C_Client_Library Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FAF528A1187929E7007885B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Diffbot_API_Pure_C_Client_Library Tests/Diffbot_API_Pure_C_Client_Library Tests-Prefix.pch";
+				INFOPLIST_FILE = "Diffbot_API_Pure_C_Client_Library Tests/Diffbot_API_Pure_C_Client_Library Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -237,6 +403,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FAF5289F187929E7007885B2 /* Build configuration list for PBXNativeTarget "Diffbot_API_Pure_C_Client_Library Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF528A0187929E7007885B2 /* Debug */,
+				FAF528A1187929E7007885B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

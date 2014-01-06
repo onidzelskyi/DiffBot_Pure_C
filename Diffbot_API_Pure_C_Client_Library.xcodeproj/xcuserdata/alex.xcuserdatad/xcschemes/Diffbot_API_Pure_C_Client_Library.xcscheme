@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FAF5288F187929E6007885B2"
+               BuildableName = "Diffbot_API_Pure_C_Client_Library Tests.octest"
+               BlueprintName = "Diffbot_API_Pure_C_Client_Library Tests"
+               ReferencedContainer = "container:Diffbot_API_Pure_C_Client_Library.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
