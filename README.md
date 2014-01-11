@@ -43,7 +43,9 @@ _Here are example of basic using of the DiffBot C library_
   * image
   * classifier
 
+<code>
     addDBAPI(&request, "article");
+</code>
 
   _Next, add token_
 
