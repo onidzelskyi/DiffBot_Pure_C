@@ -164,6 +164,7 @@ json_object* diffBot(DBRequest* request) {
     curl_easy_cleanup(_curl);
     free(chunk.memory);
     chunk.size = 0;
+    DELETE(uri)
     return new_obj;
 }
 

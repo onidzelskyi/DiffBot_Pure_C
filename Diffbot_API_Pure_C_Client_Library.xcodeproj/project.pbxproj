@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAABD6A918815233009EB136 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = FAABD6A818815233009EB136 /* Makefile */; };
 		FAF5287E1872F3AF007885B2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF5287D1872F3AF007885B2 /* main.c */; };
 		FAF528801872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */; };
 		FAF528881872F4F0007885B2 /* DBCClient.c in Sources */ = {isa = PBXBuildFile; fileRef = FAF528871872F4F0007885B2 /* DBCClient.c */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FAABD6A818815233009EB136 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = Diffbot_API_Pure_C_Client_Library/Makefile; sourceTree = "<group>"; };
 		FAF5287A1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Diffbot_API_Pure_C_Client_Library; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF5287D1872F3AF007885B2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		FAF5287F1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Diffbot_API_Pure_C_Client_Library.1; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		FAF528711872F3AF007885B2 = {
 			isa = PBXGroup;
 			children = (
+				FAABD6A818815233009EB136 /* Makefile */,
 				FAF5288B1876E073007885B2 /* INSTALL */,
 				FAF5288A1876DDFD007885B2 /* README.md */,
 				FAF5287C1872F3AF007885B2 /* Diffbot_API_Pure_C_Client_Library */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAABD6A918815233009EB136 /* Makefile in Sources */,
 				FAF528881872F4F0007885B2 /* DBCClient.c in Sources */,
 				FAF5287E1872F3AF007885B2 /* main.c in Sources */,
 			);
@@ -411,6 +415,7 @@
 				FAF528A1187929E7007885B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
