@@ -140,7 +140,8 @@ json_object* diffBot(DBRequest* request) {
     APPEND(uri, request->api);
     APPEND(uri, "?token=");
     APPEND(uri, request->token);
-    for(int i=0; i<request->count && ret==OK; ++i) {
+    int i;
+    for(i=0; i<request->count && ret==OK; ++i) {
         APPEND(uri, "&");
         APPEND(uri, request->keys[i]);
         APPEND(uri, "=");

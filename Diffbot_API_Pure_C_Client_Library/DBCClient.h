@@ -38,7 +38,7 @@ typedef struct DBRequest {
 }DBRequest;
 
 
-void initDBRequest(DBRequest*Í);
+void initDBRequest(DBRequest*);
 
 
 void addDBVersion(DBRequest*, const char*);
