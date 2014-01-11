@@ -20,13 +20,7 @@
 
 enum {OK, ERROR, OVERFULL};
 
-/*
-typedef struct Field {
-    char* key;
-    char* value;
-}Field;
 
-*/
 typedef struct DBRequest {
     unsigned count;
     char* version;
@@ -56,13 +50,9 @@ void addDBToken(DBRequest*, const char*);
 int addDBRequestField(DBRequest*, const char*, const char*);
 
 
-struct JsonObj;
-
-
 json_object* diffBot(DBRequest*);
 
 
-//char* diffbot(const char*, const char*, const char*, const Field[], const char*);
 
 
 #endif

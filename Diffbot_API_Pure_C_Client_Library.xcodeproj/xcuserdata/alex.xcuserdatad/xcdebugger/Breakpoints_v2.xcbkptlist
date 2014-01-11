@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "411137133.758163"
+            timestampString = "411143205.777415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "diffBot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,39 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "410595243.739225"
+            timestampString = "411143205.777415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "410595243.739225"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "411138176.243481"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "addDBAPI()"
             landmarkType = "7">
          </BreakpointContent>

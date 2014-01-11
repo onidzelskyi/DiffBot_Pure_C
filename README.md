@@ -31,9 +31,9 @@ _Here are example of basic using of the DiffBot C library_
 
     initDBRequest(&request);
 
-  _Next, add version (currently supported version 1 and 2)_
+_Next, add version (currently supported version 1 and 2)_
 
-    addDBVersion(&request, "2");
+addDBVersion(&request, "2");
 
   _Next, add product category
   _currently supported product categories:_

@@ -11,36 +11,28 @@
  *     URI: http://api.diffbot.com/v2/article?token=4f558dfde45e6d0e1850da93954c91b1&url=http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today
  *
  */
+
+
 #include <stdio.h>
 #include "DBCClient.h"
 #include "json.h"
 
 int main(int argc, const char * argv[]) {
-    /*
-    char url[] = "http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today";
-    char token[] = "4f558dfde45e6d0e1850da93954c91b1";
-    char api[] = "article";
-    //Field fields[] = {{"a","b"},{"c","d"}};
-    Field uri = {"url","http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today"};
-    Field fake = {"fake","http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today"};
-    Field fields[] = {uri, fake};
-    printf("%d\n", sizeof(fields));
-    char version[] = "2";
-    char* json = diffbot(url, token, api, fields, version);
-    printf("RESPONSE: %s\n", json);
-     */
     //!<
     //!< First of all define control structure
     //!<
     DBRequest request;
+
     //!<
     //!< Then, initialize it
     //!<
     initDBRequest(&request);
+    
     //!<
     //!< Next, add version (currently supported version 1 and 2)
     //!<
     addDBVersion(&request, "2");
+    
     //!<
     //!< Next, add product category
     //!< currently supported product categories:
@@ -51,23 +43,26 @@ int main(int argc, const char * argv[]) {
     //!< classifier
     //!<
     addDBAPI(&request, "article");
+    
     //!<
     //!< Next, add token
     //!<
     addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
+    
     //!<
     //!< Next, fill up fields
     //!<
     addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    
     //!<
     //!< At last, make request and take response back
     //!<
-    json_object* json;
-    /*json = */diffBot(&request);
+    json_object* json = diffBot(&request);
+
     //!<
     //!< Print out result
     //!<
-    //printf("%s\n", json_object_to_json_string(json));
+    printf("%s\n", json_object_to_json_string(json));
     /*
     addDBAPI(&request, "image");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
@@ -78,13 +73,10 @@ int main(int argc, const char * argv[]) {
     addDBAPI(&request, "product");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
      */
-    /*
-    addDBRequestField(&request, "token", "4f558dfde45e6d0e1850da93954c91b1");
-    addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
-    json = diffBot(&request);
-    printf("\n\n%s\n", json);
- )
- */
+    
+    //!<
+    //!< Clean up resources
+    //!<
     json_object_put(json);
     cleanDBRequest(&request);
     return 0;
