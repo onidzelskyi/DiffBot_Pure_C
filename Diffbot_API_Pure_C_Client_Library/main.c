@@ -36,7 +36,7 @@ int main(int argc, const char * argv[]) {
     //!<
     //!< Then, initialize it
     //!<
-    memset(&request, 0, sizeof(DBRequest));
+    initDBRequest(&request);
     //!<
     //!< Next, add version (currently supported version 1 and 2)
     //!<
@@ -63,11 +63,11 @@ int main(int argc, const char * argv[]) {
     //!< At last, make request and take response back
     //!<
     json_object* json;
-    json = diffBot(&request);
+    /*json = */diffBot(&request);
     //!<
     //!< Print out result
     //!<
-    printf("%s\n", json_object_to_json_string(json));
+    //printf("%s\n", json_object_to_json_string(json));
     /*
     addDBAPI(&request, "image");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));

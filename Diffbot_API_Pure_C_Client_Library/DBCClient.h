@@ -38,6 +38,9 @@ typedef struct DBRequest {
 }DBRequest;
 
 
+void initDBRequest(DBRequest*);
+
+
 void cleanDBRequest(DBRequest*);
 
 

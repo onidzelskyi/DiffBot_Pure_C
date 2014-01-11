@@ -4,51 +4,79 @@ _Description: This is a simple client for the Diffbot API in the C language_
 
 ## Project Setup
 
-_How do I, as a developer, start working on the project?_ 
+_Prerequisites_
 
-1. _What dependencies does it have (where are they expressed) and how do I install them?_
-2. _How can I see the project working before I change anything?_
+1. _libcurl (http://curl.haxx.se/libcurl/)_
+2. _json-c (https://github.com/jehiah/json-c)_
 
-## Testing
-
-_How do I run the project's automated tests?_
-
-### Unit Tests
-
-1. `rake spec`
-
-### Integration Tests
-
-1. _Run other local services / provide credentials for external services._
-2. `rake spec:integration`
+make
 
 ## Deploying
 
 ### _How to setup the deployment environment_
 
-- _Required heroku addons, packages, or chef recipes._
-- _Required environment variables or credentials not included in git._
-- _Monitoring services and logging._
+CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)
+LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json)
 
-### _How to deploy_
+## _Examples_
 
-## Troubleshooting & Useful Tools
+_Here are example of basic using of the DiffBot C library_
 
-_Examples of common tasks_
+ _First of all define control structure_
 
-> e.g.
-> 
-> - How to make curl requests while authenticated via oauth.
-> - How to monitor background jobs.
-> - How to run the app through a proxy.
+    <code>
+    DBRequest request;
+    </code>
 
-## Contributing changes
+  _Then, initialize it_
 
-- _Internal git workflow_
-- _Pull request guidelines_
-- _Tracker project_
-- _Google group_
-- _irc channel_
-- _"Please open github issues"_
+    <code>
+    initDBRequest(&request);
+    </code>
+
+  _Next, add version (currently supported version 1 and 2)_
+
+    <code>
+    addDBVersion(&request, "2");
+    </code>
+
+  _Next, add product category_
+    currently supported product categories:
+    article
+    frontpage
+    product
+    image
+    classifier
+
+    <code>
+    addDBAPI(&request, "article");
+    </code>
+
+    Next, add token
+
+    <code>
+    addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
+    </code>
+
+    Next, fill up fields
+
+    <code>
+    addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    </code>
+
+    At last, make request and take response back
+
+    <code>
+    json_object* json = diffBot(&request);
+    </code>
+
+    Print out result
+
+    <code>
+    printf("%s\n", json_object_to_json_string(json));
+    </code>
+
 
 ## License
+
+_That library are available under MIT license_

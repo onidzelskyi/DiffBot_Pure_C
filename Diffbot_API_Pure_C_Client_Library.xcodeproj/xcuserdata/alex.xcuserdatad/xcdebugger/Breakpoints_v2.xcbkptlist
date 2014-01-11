@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "410595243.739225"
+            timestampString = "411137133.758163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "diffBot()"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diffbot_API_Pure_C_Client_Library/DBCClient.c"
-            timestampString = "411135947.329279"
+            timestampString = "411138176.243481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "addDBAPI()"
             landmarkType = "7">
          </BreakpointContent>
