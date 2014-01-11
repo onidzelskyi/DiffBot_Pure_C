@@ -63,12 +63,14 @@ int main(int argc, const char * argv[]) {
     //!<
     //!< At last, make request and take response back
     //!<
-    json_object* json = diffBot(&request);
+    json_object* json;
+    json = diffBot(&request);
     //!<
     //!< Print out result
     //!<
     printf("%s\n", json_object_to_json_string(json));
-    
+    json_object_put(json);
+    /*
     addDBAPI(&request, "image");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
     
@@ -77,6 +79,7 @@ int main(int argc, const char * argv[]) {
     
     addDBAPI(&request, "product");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
+     */
     /*
     addDBRequestField(&request, "token", "4f558dfde45e6d0e1850da93954c91b1");
     addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");

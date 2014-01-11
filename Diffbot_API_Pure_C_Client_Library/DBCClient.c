@@ -134,7 +134,7 @@ json_object* diffBot(DBRequest* request) {
     chunk.size = 0;
     _curl = (curl_easy_init());
     //int ret = addHeader(request);
-    APPEND(uri, URI_HEAD);
+    STRCPY(uri, URI_HEAD);
     APPEND(uri, request->version);
     APPEND(uri, "/");
     APPEND(uri, request->api);
@@ -159,11 +159,11 @@ json_object* diffBot(DBRequest* request) {
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
                 curl_easy_strerror(result));
     }
-    json_object *new_obj = json_object_new_string(chunk.memory);
-//    new_obj = json_tokener_parse(chunk.memory);
+    //json_object *new_obj = json_object_new_string(chunk.memory);
+    json_object* new_obj = json_tokener_parse(chunk.memory);
     request->error = result;
     curl_easy_cleanup(_curl);
-    free(chunk.memory);
+    DELETE(chunk.memory);
     chunk.size = 0;
     DELETE(uri)
     return new_obj;
@@ -226,7 +226,7 @@ void initDBRequest(DBRequest* request) {
 
 
 void addDBVersion(DBRequest* request, const char* version) {
-    APPEND(request->version, version);
+    STRCPY(request->version, version);
 }
 
 
@@ -236,7 +236,7 @@ void addDBAPI(DBRequest* request, const char* api) {
 
 
 void addDBToken(DBRequest* request, const char* token) {
-    APPEND(request->token, token);
+    STRCPY(request->token, token);
 }
 
 /*
