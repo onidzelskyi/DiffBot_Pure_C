@@ -45,23 +45,23 @@ _Here are example of basic using of the DiffBot C library_
 
     addDBAPI(&request, "article");
 
-    _Next, add token_
+  _Next, add token_
 
     addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
 
-    _Next, fill up fields_
+  _Next, fill up fields_
 
     addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
 
-    _At last, make request and take response back_
+  _At last, make request and take response back_
 
     json_object* json = diffBot(&request);
 
-    _Print out result_
+  _Print out result_
 
     printf("%s\n", json_object_to_json_string(json));
 
-    _TODO cleanup_
+  _TODO cleanup_
     
     json_object_put(json);
     cleanDBRequest(&request);
