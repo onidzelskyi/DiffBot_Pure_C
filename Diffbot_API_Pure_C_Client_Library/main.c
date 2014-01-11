@@ -5,6 +5,7 @@
 //  Created by Oleksii on 12/31/13.
 //  Copyright (c) 2013 Oleksii. All rights reserved.
 //
+// valgrind --track-origins=yes --leak-check=full --show-reachable=yes -v --log-file=valgrind.log ./diffBootCClient
 
 /**
  *     URI: http://api.diffbot.com/v2/article?token=4f558dfde45e6d0e1850da93954c91b1&url=http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today
@@ -32,6 +33,7 @@ int main(int argc, const char * argv[]) {
     //!< First of all define control structure
     //!<
     DBRequest request;
+    memset(&request, 0, sizeof(DBRequest));
     //!<
     //!< Then, initialize it
     //!<
