@@ -159,8 +159,8 @@ json_object* diffBot(DBRequest* request) {
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
                 curl_easy_strerror(result));
     }
-    //json_object *new_obj = json_object_new_string(chunk.memory);
-    json_object* new_obj = json_tokener_parse(chunk.memory);
+    json_object *new_obj = json_object_new_string(chunk.memory);
+    //json_object* new_obj = json_tokener_parse(chunk.memory);
     request->error = result;
     curl_easy_cleanup(_curl);
     DELETE(chunk.memory);
