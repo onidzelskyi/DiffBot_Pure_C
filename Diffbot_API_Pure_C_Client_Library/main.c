@@ -33,11 +33,10 @@ int main(int argc, const char * argv[]) {
     //!< First of all define control structure
     //!<
     DBRequest request;
-    memset(&request, 0, sizeof(DBRequest));
     //!<
     //!< Then, initialize it
     //!<
-    initDBRequest(&request);
+    memset(&request, 0, sizeof(DBRequest));
     //!<
     //!< Next, add version (currently supported version 1 and 2)
     //!<
@@ -69,7 +68,6 @@ int main(int argc, const char * argv[]) {
     //!< Print out result
     //!<
     printf("%s\n", json_object_to_json_string(json));
-    json_object_put(json);
     /*
     addDBAPI(&request, "image");
     printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
@@ -87,6 +85,8 @@ int main(int argc, const char * argv[]) {
     printf("\n\n%s\n", json);
  )
  */
+    json_object_put(json);
+    cleanDBRequest(&request);
     return 0;
 }
 
