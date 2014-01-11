@@ -45,7 +45,8 @@ _Next, add version (currently supported version 1 and 2)_
   * product
   * image
   * classifier
-  _Next, add token_
+
+_Next, add token_
 
     addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
 
