@@ -1,6 +1,6 @@
 CC = gcc
 NAME = diffBootCClient
-CFLAGS = $(shell pkg-config --cflags json)
+CFLAGS = -ggdb03 $(shell pkg-config --cflags json)
 LDFLAGS = -lcurl $(shell pkg-config --libs json)
 INCLUDE = -I./
 SRC = ./

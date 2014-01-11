@@ -212,7 +212,8 @@ int addDBRequestField(DBRequest* request, const char* key, const char* value) {
 
 
 void initDBRequest(DBRequest* request) {
-    for (int i=0; i<request->count; ++i) {
+    int i;
+    for (i=0; i<request->count; ++i) {
         DELETE(request->keys[i])
         DELETE(request->values[i])
     }
