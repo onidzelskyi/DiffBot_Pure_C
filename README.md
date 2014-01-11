@@ -35,13 +35,13 @@ _Here are example of basic using of the DiffBot C library_
 
     addDBVersion(&request, "2");
 
-  _Next, add product category_
-    currently supported product categories:
-    article
-    frontpage
-    product
-    image
-    classifier
+  _Next, add product category
+  _currently supported product categories:_
+  * article
+  * frontpage
+  * product
+  * image
+  * classifier
 
     addDBAPI(&request, "article");
 
