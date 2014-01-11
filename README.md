@@ -36,15 +36,15 @@ _Next, add version (currently supported version 1 and 2)_
     addDBVersion(&request, "2");
 
   _Next, add product category_
+
+    addDBAPI(&request, "article");
+
   _currently supported product categories:_
   * article
   * frontpage
   * product
   * image
   * classifier
-
-    addDBAPI(&request, "article");
-
   _Next, add token_
 
     addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
