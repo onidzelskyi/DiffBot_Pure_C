@@ -133,6 +133,7 @@ json_object* diffBot(DBRequest* request) {
     chunk.memory = malloc(1);
     chunk.size = 0;
     _curl = (curl_easy_init());
+    curl_global_init(CURL_GLOBAL_ALL);
     //int ret = addHeader(request);
     STRCPY(uri, URI_HEAD);
     APPEND(uri, request->version);
@@ -163,6 +164,7 @@ json_object* diffBot(DBRequest* request) {
     //json_object* new_obj = json_tokener_parse(chunk.memory);
     request->error = result;
     curl_easy_cleanup(_curl);
+    curl_global_cleanup();
     DELETE(chunk.memory);
     chunk.size = 0;
     DELETE(uri)
