@@ -15,8 +15,8 @@ make
 
 ### _How to setup the deployment environment_
 
-CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)
-LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json)
+_CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)_
+_LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json)_
 
 ## _Examples_
 
@@ -24,10 +24,8 @@ _Here are example of basic using of the DiffBot C library_
 
  _First of all define control structure_
 
-    <code>
     DBRequest request;
-    </code>
-
+ 
   _Then, initialize it_
 
     <code>
