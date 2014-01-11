@@ -43,9 +43,8 @@ _Next, add version (currently supported version 1 and 2)_
   * image
   * classifier
 
-    <code>
+  - -
     addDBAPI(&request, "article");
-    </code>
 
   _Next, add token_
 
