@@ -21,17 +21,12 @@ int main(int argc, const char * argv[]) {
     //!<
     //!< First of all define control structure
     //!<
-    DBRequest request;
-
-    //!<
-    //!< Then, initialize it
-    //!<
-    initDBRequest(&request);
+    DBRequest* request = initDBRequest();
     
     //!<
     //!< Next, add version (currently supported version 1 and 2)
     //!<
-    addDBVersion(&request, "2");
+    addDBVersion(request, "2");
     
     //!<
     //!< Next, add product category
@@ -42,22 +37,22 @@ int main(int argc, const char * argv[]) {
     //!< image
     //!< classifier
     //!<
-    addDBAPI(&request, "article");
+    addDBAPI(request, "article");
     
     //!<
     //!< Next, add token
     //!<
-    addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
+    addDBToken(request, "4f558dfde45e6d0e1850da93954c91b1");
     
     //!<
     //!< Next, fill up fields
     //!<
-    addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    addDBRequestField(request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
     
     //!<
     //!< At last, make request and take response back
     //!<
-    json_object* json = diffBot(&request);
+    json_object* json = diffBot(request);
 
     //!<
     //!< Print out result
@@ -78,7 +73,7 @@ int main(int argc, const char * argv[]) {
     //!< Clean up resources
     //!<
     json_object_put(json);
-    cleanDBRequest(&request);
+    cleanDBRequest(request);
     return 0;
 }
 

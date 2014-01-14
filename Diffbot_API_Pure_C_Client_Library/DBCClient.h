@@ -32,7 +32,7 @@ typedef struct DBRequest {
 }DBRequest;
 
 
-void initDBRequest(DBRequest*);
+DBRequest* initDBRequest();
 
 
 void cleanDBRequest(DBRequest*);

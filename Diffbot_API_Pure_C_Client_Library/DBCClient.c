@@ -58,7 +58,7 @@ json_object* diffBot(DBRequest* request) {
     MemoryStruct chunk;
     chunk.memory = malloc(1);
     chunk.size = 0;
-    _curl = (curl_easy_init());
+    _curl = curl_easy_init();
     curl_global_init(CURL_GLOBAL_ALL);
     STRCPY(uri, URI_HEAD);
     APPEND(uri, request->version);
@@ -105,35 +105,43 @@ int addDBRequestField(DBRequest* request, const char* key, const char* value) {
 }
 
 
-void initDBRequest(DBRequest* request) {
-    memset(request, 0, sizeof(DBRequest));
+DBRequest* initDBRequest() {
+    return (DBRequest*)calloc(1, sizeof(DBRequest));
 }
 
 
 void cleanDBRequest(DBRequest* request) {
-    int i;
-    for (i=0; i<request->count; ++i) {
-        DELETE(request->keys[i])
-        DELETE(request->values[i])
+    if(request) {
+        int i;
+        for (i=0; i<request->count; ++i) {
+            DELETE(request->keys[i])
+            DELETE(request->values[i])
+        }
+        request->count = 0;
+        request->error = OK;
+        DELETE(request->version)
+        DELETE(request->api)
+        DELETE(request->token)
     }
-    request->count = 0;
-    request->error = OK;
-    DELETE(request->version)
-    DELETE(request->api)
-    DELETE(request->token)
 }
 
 
 void addDBVersion(DBRequest* request, const char* version) {
-    STRCPY(request->version, version);
+    if(request) {
+        STRCPY(request->version, version);
+    }
 }
 
 
 void addDBAPI(DBRequest* request, const char* api) {
-    STRCPY(request->api, api);
+    if(request) {
+        STRCPY(request->api, api);
+    }
 }
 
 
 void addDBToken(DBRequest* request, const char* token) {
-    STRCPY(request->token, token);
+    if(request) {
+        STRCPY(request->token, token);
+    }
 }
