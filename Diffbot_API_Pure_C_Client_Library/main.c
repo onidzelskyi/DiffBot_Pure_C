@@ -1,21 +1,37 @@
-//
-//  main.c
-//  Diffbot_API_Pure_C_Client_Library
-//
-//  Created by Oleksii on 12/31/13.
-//  Copyright (c) 2013 Oleksii. All rights reserved.
-//
-// valgrind --track-origins=yes --leak-check=full --show-reachable=yes -v --log-file=valgrind.log ./diffBootCClient
-
 /**
- *     URI: http://api.diffbot.com/v2/article?token=4f558dfde45e6d0e1850da93954c91b1&url=http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today
+ * @file main.c
+ * @author Oleksii Nidzelskyi <alexey.education@gmail.com>
+ * @link https://github.com/onidzelskyi/DiffBot_Pure_C
+ * @copyright Copyright &copy; 2014 Ukraine
+ * @license MIT
+ * @since 0.1
+ *
+ * This is sample application to send http GET request like this one:
+ *
+ * URI: http://api.diffbot.com/v2/article?token=4f558dfde45e6d0e1850da93954c91b1&url=http://allthingsd.com/20120516/google-gets-semantic-launches-knowledge-graph-in-english-starting-today
+ *
+ * NOTE: Token value isn't valid - it's only demo
  *
  */
+
+
+//!<
+//!< Run the this command for memory leaks (Linux only!)
+//!<
+//!< valgrind --track-origins=yes --leak-check=full --show-reachable=yes -v --log-file=valgrind.log ./diffBootCClient
+//!<
 
 
 #include <stdio.h>
 #include "DBCClient.h"
 #include "json.h"
+
+
+//!< Uncomment next line with tha valid token value
+//#define TOKEN "4f558dfde45e6d0e1850da93954c91b1"
+#define VERSION "2"
+#define API "article"
+#define URL "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting"
 
 int main(int argc, const char * argv[]) {
     //!<
@@ -26,7 +42,7 @@ int main(int argc, const char * argv[]) {
     //!<
     //!< Next, add version (currently supported version 1 and 2)
     //!<
-    addDBVersion(request, "2");
+    addDBVersion(request, VERSION);
     
     //!<
     //!< Next, add product category
@@ -37,17 +53,17 @@ int main(int argc, const char * argv[]) {
     //!< image
     //!< classifier
     //!<
-    addDBAPI(request, "article");
+    addDBAPI(request, API);
     
     //!<
     //!< Next, add token
     //!<
-    addDBToken(request, "4f558dfde45e6d0e1850da93954c91b1");
+    addDBToken(request, TOKEN);
     
     //!<
     //!< Next, fill up fields
     //!<
-    addDBRequestField(request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    addDBRequestField(request, "url", URL);
     
     //!<
     //!< At last, make request and take response back
@@ -58,16 +74,22 @@ int main(int argc, const char * argv[]) {
     //!< Print out result
     //!<
     printf("%s\n", json_object_to_json_string(json));
-    /*
-    addDBAPI(&request, "image");
-    printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
+
+    addDBAPI(request, "image");
+    json_object_put(json);
+    json = diffBot(request);
+    printf("\n\n%s\n", json_object_to_json_string(json));
     
-    addDBAPI(&request, "frontpage");
-    printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
-    
-    addDBAPI(&request, "product");
-    printf("\n\n%s\n", json_object_to_json_string(diffBot(&request)));
-     */
+    addDBAPI(request, "frontpage");
+    json_object_put(json);
+    json = diffBot(request);
+    printf("\n\n%s\n", json_object_to_json_string(json));
+
+    addDBAPI(request, "product");
+    json_object_put(json);
+    json = diffBot(request);
+    printf("\n\n%s\n", json_object_to_json_string(json));
+
     
     //!<
     //!< Clean up resources
