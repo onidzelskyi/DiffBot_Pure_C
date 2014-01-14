@@ -23,21 +23,17 @@ _LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json)_
 
 _Here are example of basic using of the DiffBot C library_
 
- _First of all define control structure_
+ _First of all create and init control structure_
 
-    DBRequest request;
-
-  _Then, initialize it_
-
-    initDBRequest(&request);
+    DBRequest* request = initDBRequest();
 
 _Next, add version (currently supported version 1 and 2)_
 
-    addDBVersion(&request, "2");
+    addDBVersion(request, "2");
 
   _Next, add product category_
 
-    addDBAPI(&request, "article");
+    addDBAPI(request, "article");
 
   _currently supported product categories:_
   * article
@@ -46,17 +42,19 @@ _Next, add version (currently supported version 1 and 2)_
   * image
   * classifier
 
+    addDBAPI(request, "article");
+
 _Next, add token_
 
-    addDBToken(&request, "4f558dfde45e6d0e1850da93954c91b1");
+    addDBToken(request, <TOKEN>);
 
   _Next, fill up fields_
 
-    addDBRequestField(&request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    addDBRequestField(request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
 
   _At last, make request and take response back_
 
-    json_object* json = diffBot(&request);
+    json_object* json = diffBot(request);
 
   _Print out result_
 
@@ -65,7 +63,7 @@ _Next, add token_
   _TODO cleanup_
     
     json_object_put(json);
-    cleanDBRequest(&request);
+    cleanDBRequest(request);
 
 
 ## License

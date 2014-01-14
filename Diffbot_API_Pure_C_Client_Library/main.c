@@ -19,7 +19,7 @@
 
 int main(int argc, const char * argv[]) {
     //!<
-    //!< First of all define control structure
+    //!< First of all create and init control structure
     //!<
     DBRequest* request = initDBRequest();
     
