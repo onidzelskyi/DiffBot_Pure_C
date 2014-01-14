@@ -41,6 +41,7 @@ _Next, add version (currently supported version 1 and 2)_
   * product
   * image
   * classifier
+  
 
     addDBAPI(request, "article");
 
@@ -48,9 +49,10 @@ _Next, add token_
 
     addDBToken(request, <TOKEN>);
 
-  _Next, fill up fields_
+  Next, fill up fields
+  _<URL> is valid url, in example http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting_
 
-    addDBRequestField(request, "url", "http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting");
+    addDBRequestField(request, "url", <URL>);
 
   _At last, make request and take response back_
 
