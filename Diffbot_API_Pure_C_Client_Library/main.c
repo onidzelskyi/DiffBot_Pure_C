@@ -1,7 +1,6 @@
 /**
  * @file main.c
  * @author Oleksii Nidzelskyi <alexey.education@gmail.com>
- * @link https://github.com/onidzelskyi/DiffBot_Pure_C
  * @copyright Copyright &copy; 2014 Ukraine
  * @license MIT
  * @since 0.1
@@ -18,7 +17,7 @@
 //!<
 //!< Run the this command for memory leaks (Linux only!)
 //!<
-//!< valgrind --track-origins=yes --leak-check=full --show-reachable=yes -v --log-file=valgrind.log ./diffBootCClient
+//!< valgrind --track-origins=yes --leak-check=full --show-reachable=yes -v --log-file=valgrind.log ./sample
 //!<
 
 

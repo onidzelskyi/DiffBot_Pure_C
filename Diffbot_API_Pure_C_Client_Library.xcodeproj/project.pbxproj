@@ -328,7 +328,9 @@
 		FAF528841872F3AF007885B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"DEBUG_INFORMATION_FORMAT[sdk=*]" = "";
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/local/lib;
+				"OTHER_CFLAGS[arch=*]" = "-DTOKEN='\"4f558dfde45e6d0e1850da93954c91b1\"'";
 				OTHER_LDFLAGS = (
 					"-lcurl",
 					"-ljson",

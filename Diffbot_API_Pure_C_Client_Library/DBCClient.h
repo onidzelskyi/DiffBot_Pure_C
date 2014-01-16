@@ -1,10 +1,10 @@
-//
-//  DBCClient.h
-//  Diffbot_API_Pure_C_Client_Library
-//
-//  Created by Oleksii on 12/31/13.
-//  Copyright (c) 2013 Oleksii. All rights reserved.
-//
+/**
+ * @file DBCClient.h
+ * @author Oleksii Nidzelskyi <alexey.education@gmail.com>
+ * @copyright Copyright &copy; 2014 Ukraine
+ * @license MIT
+ * @since 0.1
+ */
 
 #include <string.h>
 #include <stdlib.h>
@@ -31,26 +31,53 @@ typedef struct DBRequest {
     int error;
 }DBRequest;
 
-
+/** @brief Create and inialize control structure DBRequest
+ *  @return pointer to newly created control structure DBRequest
+ *  or null if there not enought memory to allocate it.
+ */
 DBRequest* initDBRequest();
 
 
-void cleanDBRequest(DBRequest*);
+/** @brief clean memory allocated by the DBRequest control structure
+ *  @param request Pointer to the DBRequest control structure.
+ */
+void cleanDBRequest(DBRequest* request);
 
 
-void addDBVersion(DBRequest*, const char*);
+/** @brief Initialize version API of the DBRequest control structure
+ *  @param request Pointer to the DBRequest control structure.
+ *  @param version Pointer to the null-terminated C-string
+ */
+void addDBVersion(DBRequest* request, const char* version);
 
 
-void addDBAPI(DBRequest*, const char*);
+/** @brief Initialize API name of the DBRequest control structure
+ *  @param request Pointer to the DBRequest control structure.
+ *  @param api Pointer to the null-terminated C-string
+ */
+void addDBAPI(DBRequest* request, const char* api);
 
 
-void addDBToken(DBRequest*, const char*);
+/** @brief Initialize token value of the DBRequest control structure
+ *  @param request Pointer to the DBRequest control structure.
+ *  @param token Pointer to the null-terminated C-string
+ */
+void addDBToken(DBRequest* request, const char* token);
 
 
-int addDBRequestField(DBRequest*, const char*, const char*);
+/** @brief Initialize key and value pair of the DBRequest control structure
+ *  @param request Pointer to the DBRequest control structure.
+ *  @param name Pointer to the null-terminated C-string
+ *  @param value Pointer to the null-terminated C-string
+ */
+void addDBRequestField(DBRequest* request, const char* name, const char* value);
 
 
-json_object* diffBot(DBRequest*);
+/** @brief Perform client API request
+ *  @param request Pointer to the DBRequest control structure.
+ *  @return pointer to newly created json object
+ */
+json_object* diffBot(DBRequest* request);
 
 
 
