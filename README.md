@@ -1,39 +1,107 @@
-# _Diffbot API C Client Library_
+# Diffbot API C Client Library
 
-_Description: This is a simple client for the Diffbot API in the C language_
+## Description: 
 
-## Project Setup
+**This is a simple client for the Diffbot API in the C language**
 
-_Prerequisites_
+## Prerequisites
 
-1. _libcurl (http://curl.haxx.se/libcurl/)_
-2. _json-c (https://github.com/jehiah/json-c)_
+1. _libcurl_ [http://curl.haxx.se/libcurl](http://curl.haxx.se/libcurl)
+2. _json-c_ [https://github.com/jehiah/json-c](https://github.com/jehiah/json-c)
 
-make
+## Build
+
+<code>
+make clean all
+</code>
+
+**wiil build the library itself with the demo application**
+
+**or**
+
+<code>
+make lib
+</code>
+
+**to build library**
+
+<code>
+make demo
+</code>
+
+**to build demo application**
 
 ## Deploying
 
-### _How to setup the deployment environment_
+1. **copy**
+	<code>
+	DBCClient.h
+	</code> 
+	**header file with the library file**
+ 	<code>
+	libdiffboot.a
+	</code> 
+	**to your work directory.**
+	
+	**Assume:**
 
-_CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)_
+	<code>
+	$WORKDIR
+	</code> 
+	**- your working directory where source files are located**
 
-_LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json)_
+	<code>
+	$LIBDIR
+	</code> 
+	**- the directory where you builded the library**
 
-## _Examples_
+	<code> 
+	cp $LIBDIR/DBCClient.h $WORKDIR
+	</code>
 
-_Here are example of basic using of the DiffBot C library_
+	<code> 
+	cp $LIBDIR/libdiffboot.a $WORKDIR
+	</code>
 
- _First of all create and init control structure_
+2. **Include header file to your source file**
 
+	<code>
+	\#include "DBCClient.h"
+	</code>
+
+3. **Add next lines to your Makefile**
+
+	<code>
+	CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)
+	</code>
+
+	<code>
+	LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json) -L$($WORKDIR) -ldiffboot
+	</code>
+
+## Examples
+
+**Here are example of basic using of the DiffBot C library**
+	
+**_First of all create and init control structure_**
+
+<!-- language: c++ -->
+
+<code>
     DBRequest* request = initDBRequest();
+</code>
 
-_Next, add version (currently supported version 1 and 2)_
+**_Next, add version (currently supported version 1 and 2)_**
 
+<code>
     addDBVersion(request, "2");
+</code>
 
-  _Next, add product category_
+  **_Next, add product API_**
 
+<code>
     addDBAPI(request, "article");
+</code>
 
   _currently supported product categories:_
   * article
@@ -43,31 +111,48 @@ _Next, add version (currently supported version 1 and 2)_
   * classifier
   
 
-    addDBAPI(request, "article");
+  * _article_
+  * _frontpage_
+  * _product_
+  * _image_
+  * _classifier_
+  
+**_Next, add token_**
 
-_Next, add token_
+<code>
+    addDBToken(request, TOKEN);
+</code>
 
-    addDBToken(request, <TOKEN>);
+**NOTE:	TOKEN 	must be a valid developer's token**
 
   Next, fill up fields
   _<URL> is valid url, in example http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting_
 
     addDBRequestField(request, "url", <URL>);
 
-  _At last, make request and take response back_
+**NOTE: URL must be a valid url, in example http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting**
 
+**_At last, make request and take response back_**
+
+<code>
     json_object* json = diffBot(request);
+</code>
 
-  _Print out result_
+**_Print out result_**
 
+<code>
     printf("%s\n", json_object_to_json_string(json));
+</code>
 
-  _TODO cleanup_
+**_At final do cleanup_**
     
-    json_object_put(json);
-    cleanDBRequest(request);
+<code>
+	json_object_put(json);
+
+	cleanDBRequest(request);
+</code>
 
 
 ## License
 
-_That library are available under MIT license_
+**That library are available under MIT license**

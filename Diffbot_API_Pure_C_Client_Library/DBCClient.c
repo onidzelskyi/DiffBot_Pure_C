@@ -1,16 +1,18 @@
-//
-//  DBCClient.c
-//  Diffbot_API_Pure_C_Client_Library
-//
-//  Created by Oleksii on 12/31/13.
-//  Copyright (c) 2013 Oleksii. All rights reserved.
-//
+/**
+ * @file DBCClient.c
+ * @author Oleksii Nidzelskyi <alexey.education@gmail.com>
+ * @link https://github.com/onidzelskyi/DiffBot_Pure_C
+ * @copyright Copyright &copy; 2014 Ukraine
+ * @license MIT
+ * @since 0.1
+ */
 
 
 #include "DBCClient.h"
 #include <curl/curl.h>
 #include <string.h>
 #include <stdlib.h>
+
 
 #define DELETE(ptr) if(ptr) { free(ptr); ptr=0; }
 
@@ -28,7 +30,7 @@ const char* URI_HEAD = "http://api.diffbot.com/v";
 char* json;
  
 
-typedef struct MemoryStruct {
+typedef struct MemoryStruct_s {
     char *memory;
     size_t size;
 }MemoryStruct;
@@ -122,6 +124,7 @@ void cleanDBRequest(DBRequest* request) {
         DELETE(request->version)
         DELETE(request->api)
         DELETE(request->token)
+        DELETE(request)
     }
 }
 

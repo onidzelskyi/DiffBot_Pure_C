@@ -1,24 +1,27 @@
 CC = gcc
-NAME = demo
+NAME = sample
 LIB = diffboot
-DFLIB = -l$(LIB) -L./
-CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)
-LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json) $(DFLIB)
+DFLIB =-l$(LIB) -L./
+CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json) -DTOKEN='"4f558dfde45e6d0e1850da93954c91b1"'
+LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json) 
+
 
 INCLUDE = -I./
 SRC = ./
 
-all: demo lib
+all: lib demo 
 
 demo: $(NAME)
 $(NAME): main.c
-	$(CC) $(CFLAGS) $(INCLUDE) $(LDFLAGS) main.c -o $(NAME)
+	$(CC) main.c -ggdb03 $(CFLAGS) $(INCLUDE) $(LDFLAGS) $(DFLIB) -o $(NAME)
 
 lib: $(LIB)
 $(LIB): DBCClient.o
-	gcc -shared $(CFLAGS)  $(LDFLAGS) DBCClient.o -o $(LIB).dlyb
+	ar rcs lib$(LIB).a DBCClient.o
 DBCClient.o: DBCClient.c
 	gcc -fPIC -c DBCClient.c $(CFLAGS) $(LDFLAGS)
 
 clean:
 	rm -f $(NAME)
+	rm -f DBCClient.o
+	rm -f lib$(LIB).a

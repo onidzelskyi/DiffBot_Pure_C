@@ -1,0 +1,104 @@
+Diffbot API C Client Library
+
+
+Description:
+  This is a simple client for the Diffbot API in the C language
+
+
+Prerequisites
+  libcurl http://curl.haxx.se/libcurl
+  json-c https://github.com/jehiah/json-c
+
+
+Build
+
+  make clean all
+
+wiil build the library itself with the demo application
+or
+
+  make lib
+
+to build library
+
+  make demo
+
+to build demo application
+
+
+Deploying
+
+copy DBCClient.h header file with the library file libdiffboot.a to your work directory.
+
+Assume:
+
+  $WORKDIR - your working directory where source files are located
+
+  $LIBDIR - the directory where you builded the library
+
+  cp $LIBDIR/DBCClient.h $WORKDIR
+
+  cp $LIBDIR/libdiffboot.a $WORKDIR
+
+Include header file to your source file
+
+  #include "DBCClient.h"
+
+Add next lines to your Makefile
+
+  CFLAGS = $(shell curl-config --cflags) $(shell pkg-config --cflags json)
+  LDFLAGS = $(shell curl-config --libs) $(shell pkg-config --libs json) -L$($WORKDIR) -ldiffboot
+
+
+Examples
+
+Here are example of basic using of the DiffBot C library
+
+First of all create and init control structure
+
+  DBRequest* request = initDBRequest();
+
+Next, add version (currently supported version 1 and 2)
+
+  addDBVersion(request, "2");
+
+Next, add product API
+
+  addDBAPI(request, "article");
+
+currently supported product API:
+  article
+  frontpage
+  product
+  image
+  classifier
+
+Next, add token
+
+  addDBToken(request, TOKEN);
+
+NOTE: TOKEN must be a valid developer's token
+
+Next, fill up fields
+
+  addDBRequestField(request, "url", URL);
+
+NOTE: URL must be a valid url, in example http://allthingsd.com/google-gets-semantic-launches-knowledge-graph-in-english-starting
+
+At last, make request and take response back
+
+  json_object* json = diffBot(request);
+
+Print out result
+
+  printf("%s\n", json_object_to_json_string(json));
+
+At final do cleanup
+
+  json_object_put(json);
+  cleanDBRequest(request);
+
+
+License
+
+That library are available under MIT license
